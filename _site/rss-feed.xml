@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Layale Matta</title>
+		<description>Android &amp; Kotlin</description>
+		<link></link>
+		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Learning Resources</title>
+				
+					<dc:creator>Layale Matta</dc:creator>
+				
+				
+					<description>&lt;p&gt;New to Android? That’s great! You’ll need to know a little bit of Kotlin and Android. The beauty of computer programming is that you do not need to formally go to school to learn how to program. You can learn almost everything that you would need to know online, and for free. &lt;br /&gt; The following resources are some that I have personally used and that I highly recommend for anyone looking to learn about building Android applications.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 05 Feb 2021 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000/journal/learning-resources.html</link>
+				<guid isPermaLink="true">http://localhost:4000/journal/learning-resources.html</guid>
+			</item>
+		
+	</channel>
+</rss>
