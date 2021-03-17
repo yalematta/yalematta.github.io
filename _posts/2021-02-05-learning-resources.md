@@ -7,19 +7,11 @@ tags: [android, kotlin, ]
 image: studying.jpg
 ---
 
-New to Android? That's great! You'll need to know a little bit of Kotlin and Android. The beauty of computer programming is that you do not need to formally go to school to learn how to program. You can learn almost everything that you would need to know online, and for free. <br> The following resources are some that I have personally used and that I highly recommend for anyone looking to learn about building Android applications.
+New to Android? That's great! You'll need to know a little bit of Kotlin and Android. The beauty of computer programming is that you do not need to formally go to school to learn how to program. You can learn almost everything that you would need to know online, and for free. <br> <br> The following resources are some that I have personally used and that I highly recommend for anyone looking to learn how to build Android applications.
 
-## [Android Basics in Kotlin](https://developer.android.com/courses/android-basics-kotlin/course)
+## [Android Basics in Kotlin](https://developer.android.com/courses)
 
-This is a free online training course developed by Google that helps you learn how to build basic Android apps. The course is made up of units. And units are composed of pathways. You may be wondering, what is a pathway? It’s an ordered sequence of activities to learn a specific skill. <br> An activity can be a video, hands-on coding tutorial (known as a [codelab](https://developer.android.com/kotlin)), an article, or quiz. All these activities are meant to help you reach specific learning objectives by the end of each pathway.
-
-## [Learn Android by Example](https://play.kotlinlang.org/byExample/)
-
-As you get into more advanced features, you will likely need to learn more programming concepts. You can check out this resource for that. <br> This is an official set of small and simple annotated examples designed for those new to Kotlin by the Jetbrains team. No prior knowledge of any programming language is required.
-
-## [Kotlin Koans](https://play.kotlinlang.org/koans/)
-
-This is a series of exercises to get you familiar with the Kotlin syntax and language features. Each exercise is created as a failing unit test, and you need to make it pass.
+These are free online training courses developed by Google that help you learn how to build basic Android apps. The courses are made up of units. And units are composed of pathways. You may be wondering, what is a pathway? It’s an ordered sequence of activities to learn a specific skill. <br> An activity can be a video, hands-on coding tutorial (known as a [codelab](https://developer.android.com/kotlin)), an article, or quiz. All these activities are meant to help you reach specific learning objectives by the end of each pathway.
 
 ## [Android Kotlin Fundamentals](https://developer.android.com/courses/kotlin-fundamentals/course)
 
@@ -30,6 +22,14 @@ This course is also developed by Google, and has ten pathways available. This tr
  - Databases and RecyclerView
  - Repository and WorkManager
  - Material Design
+
+## [Learn Android by Example](https://play.kotlinlang.org/byExample/)
+
+As you get into more advanced features, you will likely need to learn more programming concepts. You can check out this resource for that. <br> This is an official set of small and simple annotated examples designed for those new to Kotlin by the Jetbrains team. No prior knowledge of any programming language is required.
+
+## [Kotlin Koans](https://play.kotlinlang.org/koans/)
+
+This is a series of exercises to get you familiar with the Kotlin syntax and language features. Each exercise is created as a failing unit test, and you need to make it pass.
 
 ## [Udacity](https://www.udacity.com/course/android-kotlin-developer-nanodegree--nd940)
 
