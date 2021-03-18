@@ -4,7 +4,7 @@ title: "WorkManager in Action"
 author: "Layale Matta"
 categories: journal
 tags: [android, kotlin, workmanager, ]
-image: workmanager.png
+image: workmanager.jpg
 ---
 
 Here is a sample post that you can use to start your first blog post. 
