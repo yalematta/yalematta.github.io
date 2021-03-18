@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Learning Resources"
+title: "New to Android? Start here"
 author: "Layale Matta"
-categories: journal
+categories: blog
 tags: [android, kotlin, ]
 image: studying.jpg
 ---
