@@ -1,9 +1,14 @@
-@media (prefers-color-scheme: light) {
-  @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
 
-  body .gist .gist-file {
+  body .gist .gist-file, html[data-theme="light"] {
     margin-bottom: 0;
     border: 1px #adb5bd;
+    border-radius: 20;
+  }
+
+  body .gist .gist-file, html[data-theme="dark"] {
+    margin-bottom: 0;
+    border: 1px #192734;
     border-radius: 20;
   }
 
@@ -55,14 +60,13 @@
   body .gist .blob-code {
       filter: hue-rotate(90deg);
   }
-}
 
-@media (prefers-color-scheme: dark) {
+
+/* @media (prefers-color-scheme: dark) {
   @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/b737b139/stylesheets/tomorrow-night.css');
 
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-  body, html[data-theme="dark"] {
+  body {
     margin: 20px;
     font: 16px 'Open Sans', sans-serif;
   }
-}
+} */
