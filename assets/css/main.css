@@ -556,4 +556,6 @@ th, td {
 	color: #ff6600;
 }
 
-@import "theme-toggle"
+@import 'theme-toggle';
+
+}
