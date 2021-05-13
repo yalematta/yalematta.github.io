@@ -8,12 +8,12 @@ body .gist .gist-file {
 
 body .gist .gist-data {
   border-bottom: none;
-  border-radius: 10;
+  border-radius: 0;
   background-color: #f1f3f5;
 }
 
 body .gist .blob-wrapper {
-  border-radius: 10;
+  border-radius: 0;
 }
 
 body .gist .highlight {
@@ -35,6 +35,13 @@ body .gist tr:first-child td {
 
 body .gist tr:last-child td {
   padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+  color: #ced4da;
+  background-color: #ced4da;
+  border-color: transparent;
+  pointer-events: none;
 }
 
 body .gist .gist-meta {
