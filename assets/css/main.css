@@ -38,15 +38,13 @@ html[data-theme="dark"] {
   		--main-background-color: rgb(29, 35, 52);
   		--main-text-color: rgb(229, 229, 234);
 	}
-}
-
-@media (prefers-color-scheme: light) {
+	
 	html[data-theme="light"] { 
-    --light-text-color: rgb(72, 72, 74);
-      --link-color: rgb(0, 112, 201);
-      --main-background-color: rgb(255, 255, 255);
-      --main-text-color: rgb(51, 51, 51);
-    }
+	--light-text-color: rgb(72, 72, 74);
+  	--link-color: rgb(0, 112, 201);
+  	--main-background-color: rgb(255, 255, 255);
+  	--main-text-color: rgb(51, 51, 51);
+	}
 }
 
 body {
