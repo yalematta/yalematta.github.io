@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jetpack DataStore is the new SharedPreferences"
+title: "DataStore is the new SharedPreferences"
 author: "Layale Matta"
 categories: blog
 tags: [android, kotlin, jetpack, datastore]
@@ -18,7 +18,7 @@ Jetpack DataStore is a data storage solution that provides two different impleme
 Preferences DataStore and Proto DataStore.
 
 **Preferences DataStore** stores and accesses data using keys.
-</br>
+<br>
 **Proto DataStore** stores data as instances of a custom data type and requires creating a schema using protocol buffers.
 
 DataStore uses Kotlin coroutines and Flow to store data asynchronously, consistently, and transactionally unlike SharedPreferences.
@@ -31,7 +31,7 @@ In this simple [project](https://github.com/yalematta/datastore-demo), we are im
 
 <img src="../assets/img/preferences_login.png" width="300"/> <img src="../assets/img/preferences_welcome.png" width="300"/>
 
-To get your hands on the code, consider checking the GitHub repo [_datastore-demo_](https://github.com/yalematta/datastore-demo). </br>
+To get your hands on the code, consider checking the GitHub repo [_datastore-demo_](https://github.com/yalematta/datastore-demo). <br>
 The final code is located in the [_preferences_datastore_](https://github.com/yalematta/datastore-demo/tree/preferences_datastore) branch.
 
 ### SharedPreferences Limitations 🛑
@@ -312,6 +312,6 @@ Now that we migrated to Preferences DataStore let's recap!
 
 Join me in the next post to learn how to use **Proto DataStore**.
 
-</br>
-If this post was of any help to you, or if you think it requires further explanation, I'd love to know! </br>
+<br>
+If this post was of any help to you, or if you think it requires further explanation, I'd love to know! <br>
 Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
