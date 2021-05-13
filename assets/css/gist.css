@@ -41,6 +41,8 @@ body .gist .blob-num {
   color: #ced4da;
   background-color: #ced4da;
   border-color: transparent;
+  box-sizing: unset;
+  border: unset;
   pointer-events: none;
 }
 
