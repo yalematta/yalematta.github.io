@@ -302,7 +302,7 @@ class WelcomeActivity : AppCompatActivity() {
 Now that we migrated to Preferences DataStore let's recap! 
 
 **DataStore**:
-- is a replacement for SharedPreferences addressing most of its downsides
+- is a replacement for SharedPreferences
 - has a fully asynchronous API using Kotlin coroutines and Flow
 - guarantees data consistency
 - handles data migration
@@ -313,5 +313,4 @@ Now that we migrated to Preferences DataStore let's recap!
 Join me in the next post to learn how to use **Proto DataStore**.
 
 <br>
-If this post was of any help to you, or if you think it requires further explanation, I'd love to know! <br>
-Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
+If this post was of any help to you, or if you think it requires further explanation, I'd love to know! Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
