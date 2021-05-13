@@ -37,12 +37,10 @@ body .gist tr:last-child td {
   padding-bottom: 15px !important;
 }
 
-body .gist .blob-num {
-  color: #ced4da;
-  background-color: #495057;
-  pointer-events: none;
-}
-
 body .gist .gist-meta {
   display: none;
+}
+
+body .gist .blob-code {
+    filter: hue-rotate(90deg);
 }
