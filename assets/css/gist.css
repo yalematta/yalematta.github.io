@@ -38,12 +38,11 @@ body .gist tr:last-child td {
 }
 
 body .gist .blob-num {
-  color: #adadad;
-  background-color: #d7dde4;
+  color: #000000;
+  background-color: #f1f3f5;
   border-color: transparent;
   box-sizing: unset;
   border: unset;
-  background-size: 0%;
   pointer-events: none;
 }
 
