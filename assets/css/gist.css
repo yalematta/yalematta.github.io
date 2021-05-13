@@ -3,7 +3,7 @@
 body .gist .gist-file {
   margin-bottom: 0;
   border: 1px #adb5bd;
-  border-radius: 0;
+  border-radius: 20;
 }
 
 body .gist .gist-data {
@@ -13,7 +13,7 @@ body .gist .gist-data {
 }
 
 body .gist .blob-wrapper {
-  border-radius: 20;
+  border-radius: 0;
 }
 
 body .gist .highlight {
@@ -44,7 +44,7 @@ body .gist .blob-num {
   box-sizing: unset;
   border: unset;
   pointer-events: none;
-  box-decoration-break: slice;
+  display: none;
 }
 
 body .gist .gist-meta {
