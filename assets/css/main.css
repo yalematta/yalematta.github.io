@@ -51,6 +51,7 @@ html[data-theme="dark"] {
   body .gist .gist-data {
     border-bottom: none;
     border-radius: 0;
+    border: none;
     background-color: #192734;
   }
 
