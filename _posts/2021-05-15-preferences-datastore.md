@@ -50,14 +50,26 @@ First, add the Preference DataStore dependency in the build.gradle file:
 
 <script src="https://gist.github.com/yalematta/348c8c97a8e97ecb17dffb8081d499de.js"></script>
 
+```kotlin
+implementation "androidx.datastore:datastore-preferences:1.0.0-beta01"
+```
+
 We have also added the Lifecycle dependencies for using ViewModel:
 
 <script src="https://gist.github.com/yalematta/8b915f66235df897bef53dcf01d2637c.js"></script>
 
+```kotlin
+// architecture components
+implementation "androidx.core:core-ktx:$coreVersion"
+implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+```
+
 ## DataStore Repository 🗃️
 Inside a new package called _**repository**_, create the Kotlin class **DataStoreRepository.kt**. In this class we are going to store all the logic necessary for writing and reading DataStore preferences. We will pass to it a dataStore of type `DataStore<Preferences>` as a parameter. 
 
-<script src="https://gist.github.com/yalematta/348c8c97a8e97ecb17dffb8081d499de.js"></script>
+<script src="https://gist.github.com/yalematta/bb26e69e192bb33b170ead7249ad97ac.js"></script>
 
 ```kotlin
 class DataStoreRepository(private val dataStore: DataStore<Preferences>) {
@@ -67,6 +79,8 @@ class DataStoreRepository(private val dataStore: DataStore<Preferences>) {
 
 Let's create a data class called **UserPreferecences**. It will contain the two values we're going to save.
 
+<script src="https://gist.github.com/yalematta/34049de665faff336330d137a4905d1b.js"></script>
+
 ```kotlin
 data class UserPreferences(
     val username: String,
@@ -75,6 +89,8 @@ data class UserPreferences(
 ```
 
 Unlike SharedPreferences, in DataStore we cannot add a _**key**_ simply as a String. Instead we have to create a `Preferences.Key<String>` object or simply by using the extension function _`stringPreferencesKey`_ as follows:
+
+<script src="https://gist.github.com/yalematta/08866644d645bc2f3e1a556a510f76db.js"></script>
 
 ```kotlin
 class DataStoreRepository(private val dataStore: DataStore<Preferences>) {
@@ -89,6 +105,8 @@ class DataStoreRepository(private val dataStore: DataStore<Preferences>) {
 ### Write to DataStore 📝
 
 In order to save to DataStore, we use the _`dataStore.edit`_ method using the keys we created above.
+
+<script src="https://gist.github.com/yalematta/95f5f58529aa52397daab93616ab542b.js"></script>
 
 ```kotlin
 suspend fun saveToDataStore(username: String, remember: Boolean) {
@@ -105,6 +123,8 @@ You may have noticed that we're using a suspend function here. This is because _
 
 To read our data, we will retrieve it using _`dataStore.data`_ as a `Flow<UserPreferences>`.
 Later, we are going to convert this Flow emitted value to LiveData in our ViewModel. 
+
+<script src="https://gist.github.com/yalematta/9a521534d54821199014aec796346c4e.js"></script>
 
 ```kotlin
 val readFromDataStore : Flow<UserPreferences> = dataStore.data
@@ -128,6 +148,8 @@ Make sure to handle the IOExceptions, that are thrown when an error occurs while
 
 To clear data, we can either clear the preferences all together or clear a specific preference by its key.
 
+<script src="https://gist.github.com/yalematta/0fe8c6aa5e43b070803be431a3099864.js"></script>
+
 ```kotlin
 suspend fun clearDataStore() {
     dataStore.edit { preferences ->
@@ -145,6 +167,8 @@ suspend fun removeUsername() {
 ## Call it from the ViewModel 🤙🏼
 
 In another _**viewmodel**_ package, create the **LoginViewModel** class. 
+
+<script src="https://gist.github.com/yalematta/4d0150753d3dbe9a2432b1a4ce832042.js"></script>
 
 ```kotlin
 class LoginViewModel(private val dataStoreRepository: DataStoreRepository)
@@ -185,6 +209,8 @@ We're retrieving _userPreferences_ and converting the Flow into LiveData in orde
 
 ## Create DataStore 🗄️
 
+<script src="https://gist.github.com/yalematta/7bfd2c23a821f87f2344af2fa9fbf9c8.js"></script>
+
 ```kotlin
 private const val USER_PREFERENCES_NAME = "user_preferences"
 
@@ -196,6 +222,8 @@ val Context.dataStore by preferencesDataStore(
 ### Migrate from SharedPreferences 📦
 
 If we are migrating our existing data from the SharedPreferences, when creating our DataStore, we should add a migration based on the SharedPreferences name. DataStore will be able to migrate from SharedPreferences to DataStore automatically, for us. 
+
+<script src="https://gist.github.com/yalematta/2b265802c8afe71049e343e1e802c854.js"></script>
 
 ```kotlin
 private const val USER_PREFERENCES_NAME = "user_preferences"
@@ -211,6 +239,8 @@ private val Context.dataStore by preferencesDataStore(
 ## Observe it in the Activity 🔬
 
 In our activity, we first observe our userPreferences as liveData from our ViewModel.
+
+<script src="https://gist.github.com/yalematta/ec554c854cfdc8be3fc9b819aa25db8f.js"></script>
 
 ```kotlin
 class LoginActivity : AppCompatActivity() {
@@ -260,6 +290,8 @@ class LoginActivity : AppCompatActivity() {
 Whenever _**Remember Me**_ is observed as checked, we redirect the user to the Welcome screen. Whenever we click the login button, if our checkbox is checked we update our userPreferences, otherwise we clear our saved user preferences.
 
 For the simplicity of our application, we will use the same ViewModel in our **WelcomeActivity** as well. We observe the _username_ and display it whenever it is not empty. And once we log out we clear our saved userPreferences. 
+
+<script src="https://gist.github.com/yalematta/e8f38328cd5a6e8debe8ef88f8b429f8.js"></script>
 
 ```kotlin
 class WelcomeActivity : AppCompatActivity() {
