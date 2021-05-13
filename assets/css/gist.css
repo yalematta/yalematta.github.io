@@ -6,17 +6,21 @@
     border-radius: 20;
   }
 
-  body .gist .gist-data, html[data-theme="light"] {
-    border-bottom: none;
-    border-radius: 0;
-    background-color: #f1f3f5;
+  @media (prefers-color-scheme: light) {
+    body .gist .gist-data {
+      border-bottom: none;
+      border-radius: 0;
+      background-color: #f1f3f5;
+    }
   }
 
-  body .gist .gist-data, html[data-theme="dark"] {
-    border-bottom: none;
-    border-radius: 0;
-    background-color: #192734;
-  }
+  @media (prefers-color-scheme: dark) {
+    body .gist .gist-data {
+      border-bottom: none;
+      border-radius: 0;
+      background-color: #192734;
+    }
+}
 
   body .gist .blob-wrapper {
     border-radius: 0;
@@ -44,12 +48,6 @@
   }
 
   body .gist .blob-num {
-    color: #0000009f;
-    background-color: #f1f3f5;
-    border-color: transparent;
-    box-sizing: unset;
-    border: unset;
-    pointer-events: none;
     display: none;
   }
 
