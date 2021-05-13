@@ -1,43 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
 
-body .gist .gist-file {
+body .gist .gist-file, html[data-theme="light"] {
   margin-bottom: 0;
   border: 1px #adb5bd;
   border-radius: 20;
 }
 
-body .gist .gist-data {
+body .gist .gist-data, html[data-theme="light"] {
   border-bottom: none;
   border-radius: 0;
   background-color: #f1f3f5;
 }
 
-body .gist .blob-wrapper {
+body .gist .blob-wrapper, html[data-theme="light"] {
   border-radius: 0;
 }
 
-body .gist .highlight {
+body .gist .highlight, html[data-theme="light"] {
   background-color: transparent;
   font-family: 'Droid Sans Mono', monospace;
   font-size: 12px;
 }
 
-body .gist .highlight td {
+body .gist .highlight td, html[data-theme="light"] {
   padding: 5px 15px !important;
   line-height: 1;
   font-family: inherit;
   font-size: inherit;
 }
 
-body .gist tr:first-child td {
+body .gist tr:first-child td, html[data-theme="light"] {
   padding-top: 15px !important;
 }
 
-body .gist tr:last-child td {
+body .gist tr:last-child td, html[data-theme="light"] {
   padding-bottom: 15px !important;
 }
 
-body .gist .blob-num {
+body .gist .blob-num, html[data-theme="light"] {
   color: #0000009f;
   background-color: #f1f3f5;
   border-color: transparent;
@@ -47,10 +47,10 @@ body .gist .blob-num {
   display: none;
 }
 
-body .gist .gist-meta {
+body .gist .gist-meta, html[data-theme="light"] {
   display: none;
 }
 
-body .gist .blob-code {
+body .gist .blob-code, html[data-theme="light"] {
     filter: hue-rotate(90deg);
 }
