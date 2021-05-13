@@ -6,7 +6,7 @@
     border-radius: 20;
   }
 
-  /* @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     body .gist .gist-data {
       border-bottom: none;
       border-radius: 0;
@@ -184,7 +184,7 @@
         color: #fff;
     }
 
-  } */
+  }
 
   @media (prefers-color-scheme: light) { 
 
