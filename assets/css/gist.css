@@ -12,6 +12,43 @@
       border-radius: 0;
       background-color: #f1f3f5;
     }
+
+    body .gist .blob-wrapper {
+      border-radius: 0;
+    }
+  
+    body .gist .highlight {
+      background-color: transparent;
+      font-family: 'Droid Sans Mono', monospace;
+      font-size: 12px;
+    }
+  
+    body .gist .highlight td {
+      padding: 5px 15px !important;
+      line-height: 1;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  
+    body .gist tr:first-child td {
+      padding-top: 15px !important;
+    }
+  
+    body .gist tr:last-child td {
+      padding-bottom: 15px !important;
+    }
+  
+    body .gist .blob-num {
+      display: none;
+    }
+  
+    body .gist .gist-meta {
+      display: none;
+    }
+  
+    body .gist .blob-code {
+        filter: hue-rotate(90deg);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -193,50 +230,3 @@
     }
 
   }
-
-  body .gist .blob-wrapper {
-    border-radius: 0;
-  }
-
-  body .gist .highlight {
-    background-color: transparent;
-    font-family: 'Droid Sans Mono', monospace;
-    font-size: 12px;
-  }
-
-  body .gist .highlight td {
-    padding: 5px 15px !important;
-    line-height: 1;
-    font-family: inherit;
-    font-size: inherit;
-  }
-
-  body .gist tr:first-child td {
-    padding-top: 15px !important;
-  }
-
-  body .gist tr:last-child td {
-    padding-bottom: 15px !important;
-  }
-
-  body .gist .blob-num {
-    display: none;
-  }
-
-  body .gist .gist-meta {
-    display: none;
-  }
-
-  body .gist .blob-code {
-      filter: hue-rotate(90deg);
-  }
-
-
-/* @media (prefers-color-scheme: dark) {
-  @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/b737b139/stylesheets/tomorrow-night.css');
-
-  body {
-    margin: 20px;
-    font: 16px 'Open Sans', sans-serif;
-  }
-} */
