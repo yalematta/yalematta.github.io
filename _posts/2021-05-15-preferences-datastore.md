@@ -48,6 +48,8 @@ Luckily Jetpack DataStore addresses those issues. Since it's powered by Flow, Da
 
 First, add the Preference DataStore dependency in the build.gradle file:
 
+<script src="https://gist.github.com/yalematta/348c8c97a8e97ecb17dffb8081d499de.js"></script>
+
 ```kotlin
 implementation "androidx.datastore:datastore-preferences:1.0.0-beta01"
 ```
