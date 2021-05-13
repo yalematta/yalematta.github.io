@@ -850,43 +850,43 @@ th, td {
       color: #657b83;
       background: rgba(64, 0, 0, .5);
   }
+}
 
-  body .gist .blob-wrapper {
-    border-radius: 0;
-  }
+body .gist .blob-wrapper {
+  border-radius: 0;
+}
 
-  body .gist .highlight {
-    background-color: transparent;
-    font-family: 'Droid Sans Mono', monospace;
-    font-size: 12px;
-  }
+body .gist .highlight {
+  background-color: transparent;
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 12px;
+}
 
-  body .gist .highlight td {
-    padding: 5px 15px !important;
-    line-height: 1;
-    font-family: inherit;
-    font-size: inherit;
-  }
+body .gist .highlight td {
+  padding: 5px 15px !important;
+  line-height: 1;
+  font-family: inherit;
+  font-size: inherit;
+}
 
-  body .gist tr:first-child td {
-    padding-top: 15px !important;
-  }
+body .gist tr:first-child td {
+  padding-top: 15px !important;
+}
 
-  body .gist tr:last-child td {
-    padding-bottom: 15px !important;
-  }
+body .gist tr:last-child td {
+  padding-bottom: 15px !important;
+}
 
-  body .gist .blob-num {
-    display: none;
-  }
+body .gist .blob-num {
+  display: none;
+}
 
-  body .gist .gist-meta {
-    display: none;
-  }
+body .gist .gist-meta {
+  display: none;
+}
 
-  body .gist .blob-code {
-      filter: hue-rotate(90deg);
-  }
+body .gist .blob-code {
+    filter: hue-rotate(90deg);
 }
   
 @import "theme-toggle"
