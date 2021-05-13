@@ -50,21 +50,14 @@ First, add the Preference DataStore dependency in the build.gradle file:
 
 <script src="https://gist.github.com/yalematta/348c8c97a8e97ecb17dffb8081d499de.js"></script>
 
-```kotlin
-implementation "androidx.datastore:datastore-preferences:1.0.0-beta01"
-```
-
 We have also added the Lifecycle dependencies for using ViewModel:
-```kotlin
-// architecture components
-implementation "androidx.core:core-ktx:$coreVersion"
-implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
-implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-```
+
+<script src="https://gist.github.com/yalematta/8b915f66235df897bef53dcf01d2637c.js"></script>
 
 ## DataStore Repository 🗃️
 Inside a new package called _**repository**_, create the Kotlin class **DataStoreRepository.kt**. In this class we are going to store all the logic necessary for writing and reading DataStore preferences. We will pass to it a dataStore of type `DataStore<Preferences>` as a parameter. 
+
+<script src="https://gist.github.com/yalematta/348c8c97a8e97ecb17dffb8081d499de.js"></script>
 
 ```kotlin
 class DataStoreRepository(private val dataStore: DataStore<Preferences>) {
