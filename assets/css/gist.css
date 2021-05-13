@@ -1,56 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+@media (prefers-color-scheme: light) {
+  @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
 
-body .gist .gist-file {
-  margin-bottom: 0;
-  border: 1px #adb5bd;
-  border-radius: 20;
+  body .gist .gist-file {
+    margin-bottom: 0;
+    border: 1px #adb5bd;
+    border-radius: 20;
+  }
+
+  body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+  }
+
+  body .gist .blob-wrapper {
+    border-radius: 0;
+  }
+
+  body .gist .highlight {
+    background-color: transparent;
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 12px;
+  }
+
+  body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  body .gist tr:first-child td {
+    padding-top: 15px !important;
+  }
+
+  body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+  }
+
+  body .gist .blob-num {
+    color: #0000009f;
+    background-color: #f1f3f5;
+    border-color: transparent;
+    box-sizing: unset;
+    border: unset;
+    pointer-events: none;
+    display: none;
+  }
+
+  body .gist .gist-meta {
+    display: none;
+  }
+
+  body .gist .blob-code {
+      filter: hue-rotate(90deg);
+  }
 }
 
-body .gist .gist-data {
-  border-bottom: none;
-  border-radius: 0;
-  background-color: #f1f3f5;
-}
+@media (prefers-color-scheme: dark) {
+  @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/b737b139/stylesheets/tomorrow-night.css');
 
-body .gist .blob-wrapper {
-  border-radius: 0;
-}
-
-body .gist .highlight {
-  background-color: transparent;
-  font-family: 'Droid Sans Mono', monospace;
-  font-size: 12px;
-}
-
-body .gist .highlight td {
-  padding: 5px 15px !important;
-  line-height: 1;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-body .gist tr:first-child td {
-  padding-top: 15px !important;
-}
-
-body .gist tr:last-child td {
-  padding-bottom: 15px !important;
-}
-
-body .gist .blob-num {
-  color: #0000009f;
-  background-color: #f1f3f5;
-  border-color: transparent;
-  box-sizing: unset;
-  border: unset;
-  pointer-events: none;
-  display: none;
-}
-
-body .gist .gist-meta {
-  display: none;
-}
-
-body .gist .blob-code {
-    filter: hue-rotate(90deg);
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  body, html[data-theme="dark"] {
+    margin: 20px;
+    font: 16px 'Open Sans', sans-serif;
+  }
 }
