@@ -48,21 +48,21 @@ html[data-theme="dark"] {
   	--main-text-color: rgb(51, 51, 51);
   }
   
-  /* body .gist .gist-data {
+  body .gist .gist-data {
     border-bottom: none;
     border-radius: 0;
     border: none;
     background-color: #192734;
-  } */
+  }
 
   body .gist .highlight {
     background: #1d1f21;
   }
 
-  /* body .gist .blob-num,
+  body .gist .blob-num,
   body .gist .blob-code-inner {
-      color: #c5c8c6;
-  } */
+      color: #1d1f21;
+  }
 
   body .gist .pl-enti {
       color: #f0c674;
