@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
 
-  body .gist .gist-file, html[data-theme="light"] {
+  body .gist .gist-file {
     margin-bottom: 0;
     border: 1px #adb5bd;
     border-radius: 20;
   }
 
-  body .gist .gist-file, html[data-theme="dark"] {
-    margin-bottom: 0;
-    border: 1px #192734;
-    border-radius: 20;
-  }
-
-  body .gist .gist-data {
+  body .gist .gist-data, html[data-theme="light"] {
     border-bottom: none;
     border-radius: 0;
     background-color: #f1f3f5;
+  }
+
+  body .gist .gist-data, html[data-theme="dark"] {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #192734;
   }
 
   body .gist .blob-wrapper {
