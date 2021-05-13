@@ -31,7 +31,7 @@ In this simple [project](https://github.com/yalematta/datastore-demo), we are im
 
 <img src="../assets/img/preferences_login.png" width="300"/> <img src="../assets/img/preferences_welcome.png" width="300"/>
 
-To get your hands on the code, consider checking the GitHub repo [_datastore-demo_](https://github.com/yalematta/datastore-demo). <br>
+To get your hands on the code, consider checking this [GitHub repo](https://github.com/yalematta/datastore-demo). <br>
 The final code is located in the [_preferences_datastore_](https://github.com/yalematta/datastore-demo/tree/preferences_datastore) branch.
 
 ### SharedPreferences Limitations 🛑
