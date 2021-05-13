@@ -734,6 +734,8 @@ th, td {
 	color: #ff6600;
 }
 
+@media (prefers-color-scheme: light) {
+
   body .gist .gist-file {
     margin-bottom: 0;
     border: 1px #adb5bd;
@@ -885,5 +887,6 @@ th, td {
   body .gist .blob-code {
       filter: hue-rotate(90deg);
   }
-
-  @import "theme-toggle"
+}
+  
+@import "theme-toggle"
