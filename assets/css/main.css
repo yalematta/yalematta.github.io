@@ -556,5 +556,10 @@ th, td {
 .fa-rss-square:hover {
 	color: #ff6600;
 }
+
+.adsbygoogle {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
   
 @import "theme-toggle"
