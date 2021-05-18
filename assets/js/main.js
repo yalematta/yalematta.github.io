@@ -1,9 +1,11 @@
+// Toggle Light and Dark Mode Begin
 window.onload = function() {
     const checkb = document.getElementById('theme-switch');
     checkb.addEventListener('change', () => {
         document.body.classList.toggle('darkTheme');
     });
 }
+// Toggle End
 
 
 let systemInitiatedDark = window.matchMedia("(prefers-color-scheme: dark)");
