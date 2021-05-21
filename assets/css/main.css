@@ -34,7 +34,7 @@ html[data-theme="dark"] {
 	}
 
 @media (prefers-color-scheme: dark) {
-	html, html[data-theme="dark"], body.darkTheme {
+	html, html[data-theme="dark"] {
 		--light-text-color: rgb(199, 199, 204);
   		--link-color: rgb( 100, 210, 255);
   		--main-background-color: rgb(29, 35, 52);
