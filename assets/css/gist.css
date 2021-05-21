@@ -2,7 +2,7 @@
 body .gist .gist-file {
     margin-bottom: 0;
     border: 1px #adb5bd;
-    border-radius: 20;
+    border-radius: 0;
 }
 
 body .gist .gist-data {
