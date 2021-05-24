@@ -286,7 +286,7 @@ hr {
 
 .menu-content a:hover {
 color: var(--link-color);
-transform: scale(1);
+transform: scale(1.5);
 }
 
 .social-icons {
