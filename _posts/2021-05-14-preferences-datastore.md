@@ -135,7 +135,7 @@ Now that we migrated to Preferences DataStore let's recap!
 
 ## Up next ⏭
 
-Join me in the next post to learn how to use **[Proto DataStore]**(https://yalematta.dev/blog/proto-datastore.html).
+Join me in the next post to learn how to use [Proto DataStore](https://yalematta.dev/blog/proto-datastore.html).
 
 <br>
 If this post was of any help to you, or if you think it requires further explanation, I'd love to know! Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
