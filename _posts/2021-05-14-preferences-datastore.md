@@ -12,7 +12,7 @@ You've definitely used SharedPreferences to store small or simple data sets. But
 So if you're currently using SharedPreferences, consider migrating to DataStore instead. 
 And good news, it's now in Beta 🎉
 
-## What is DataStore? 🔍
+## 🔍 What is DataStore? 
 
 Jetpack DataStore is a data storage solution that provides two different implementations: 
 Preferences DataStore and Proto DataStore.
@@ -23,7 +23,7 @@ Preferences DataStore and Proto DataStore.
 
 DataStore uses Kotlin coroutines and Flow to store data asynchronously, consistently, and transactionally unlike SharedPreferences.
 
-### Let's dive 🤿
+### 🤿 Let's dive 
 
 In this article, we will focus on **Preferences DataStore**. 
 
@@ -34,7 +34,7 @@ In this simple [project](https://github.com/yalematta/datastore-demo), we are im
 To get your hands on the code, consider checking this [GitHub repo](https://github.com/yalematta/datastore-demo). <br>
 The final code is located in the [_preferences_datastore_](https://github.com/yalematta/datastore-demo/tree/preferences_datastore) branch.
 
-### SharedPreferences Limitations 🛑
+### 🛑 SharedPreferences Limitations 
 
 The biggest downsides of SharedPreferences include: 
 - Lack of safety from runtime exceptions
@@ -44,7 +44,7 @@ The biggest downsides of SharedPreferences include:
 
 Luckily Jetpack DataStore addresses those issues. Since it's powered by Flow, DataStore saves the preferences in a file and performs all data operations on Dispatchers.IO under the hood. And your app won't be freezing while storing data. 
 
-## Let's get started... 🏁
+## 🏁 Let's get started... 
 
 First, add the Preference DataStore dependency in the build.gradle file:
 
@@ -54,7 +54,7 @@ We have also added the Lifecycle dependencies for using ViewModel:
 
 <script src="https://gist.github.com/yalematta/8b915f66235df897bef53dcf01d2637c.js"></script>
 
-## DataStore Repository 🗃️
+## 🗃️ DataStore Repository 
 Inside a new package called _**repository**_, create the Kotlin class **DataStoreRepository.kt**. In this class we are going to store all the logic necessary for writing and reading DataStore preferences. We will pass to it a dataStore of type `DataStore<Preferences>` as a parameter. 
 
 <script src="https://gist.github.com/yalematta/bb26e69e192bb33b170ead7249ad97ac.js"></script>
@@ -67,7 +67,7 @@ Unlike SharedPreferences, in DataStore we cannot add a _**key**_ simply as a Str
 
 <script src="https://gist.github.com/yalematta/08866644d645bc2f3e1a556a510f76db.js"></script>
 
-### Write to DataStore 📝
+### 📝 Write to DataStore 
 
 In order to save to DataStore, we use the _`dataStore.edit`_ method using the keys we created above.
 
@@ -75,7 +75,7 @@ In order to save to DataStore, we use the _`dataStore.edit`_ method using the ke
 
 You may have noticed that we're using a suspend function here. This is because _`dataStore.edit`_ uses Coroutines. This function accepts a `transform` block of code that allows us to transactionally update the state in DataStore.  It can also throw an IOException if an error was encountered while reading or writing to disk.
 
-### Read from DataStore 📋
+### 📋 Read from DataStore 
 
 To read our data, we will retrieve it using _`dataStore.data`_ as a `Flow<UserPreferences>`.
 Later, we are going to convert this Flow emitted value to LiveData in our ViewModel. 
@@ -84,13 +84,13 @@ Later, we are going to convert this Flow emitted value to LiveData in our ViewMo
 
 Make sure to handle the IOExceptions, that are thrown when an error occurs while reading data. Do this by using _`catch()`_ before _`map()`_  and emitting _`emptyPreferences()`_.
 
-### Clear DataStore 🆑
+### 🆑 Clear DataStore 
 
 To clear data, we can either clear the preferences all together or clear a specific preference by its key.
 
 <script src="https://gist.github.com/yalematta/0fe8c6aa5e43b070803be431a3099864.js"></script>
 
-## Call it from the ViewModel 🤙🏼
+## 🤙🏼 Call it from the ViewModel 
 
 In another _**viewmodel**_ package, create the **LoginViewModel** class. 
 
@@ -100,17 +100,17 @@ We're retrieving _userPreferences_ and converting the Flow into LiveData in orde
 
 **LoginViewModelFactory** is a `ViewModelProvider.Factory` that is responsible to create our instance of **LoginViewModel** later in our Activity. We will pass to it the **DataStoreRepository** which is need in **LoginViewModel**'s constructor.
 
-## Create DataStore 🗄️
+## 🗄️ Create DataStore 
 
 <script src="https://gist.github.com/yalematta/7bfd2c23a821f87f2344af2fa9fbf9c8.js"></script>
 
-### Migrate from SharedPreferences 📦
+### 📦 Migrate from SharedPreferences 
 
 If we are migrating our existing data from the SharedPreferences, when creating our DataStore, we should add a migration based on the SharedPreferences name. DataStore will be able to migrate from SharedPreferences to DataStore automatically, for us. 
 
 <script src="https://gist.github.com/yalematta/2b265802c8afe71049e343e1e802c854.js"></script>
 
-## Observe it in the Activity 🔬
+## 🔬 Observe it in the Activity 
 
 In our activity, we first observe our userPreferences as liveData from our ViewModel.
 
@@ -122,7 +122,7 @@ For the simplicity of our application, we will use the same ViewModel in our **W
 
 <script src="https://gist.github.com/yalematta/e8f38328cd5a6e8debe8ef88f8b429f8.js"></script>
 
-## Key Takeaways 💡
+## 💡 Key Takeaways 
 
 Now that we migrated to Preferences DataStore let's recap! 
 
@@ -133,7 +133,7 @@ Now that we migrated to Preferences DataStore let's recap!
 - handles data migration
 - handles data corruption
 
-## Up next ⏭
+## ⏭ Up next 
 
 Join me in the next post to learn how to use [Proto DataStore](https://yalematta.dev/blog/proto-datastore.html).
 

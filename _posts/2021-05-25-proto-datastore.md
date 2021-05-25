@@ -9,7 +9,7 @@ image: proto_datastore.jpg
 
 In a [previous post](https://yalematta.dev/blog/preferences-datastore.html) we have explored how to use **Preferences DataStore** to migrate our **SharedPreferences**. And in this post we will focus on **Proto DataStore**.
 
-## What makes **Proto DataStore** different? 🤔
+## 🤔 What makes **Proto DataStore** different? 
 
 While both **Preferences** and **Proto DataStore** allow saving data, they do this in different ways. One important feature is applied only when using **Proto DataStore**, and it is **Type Safety**. 
 
@@ -17,19 +17,19 @@ With **Proto DataStore** we don't have to use keys. Instead we define a schema u
 
 One of the downsides of **SharedPreferences** and **Preferences DataStore** is that there is no way to ensure that keys are accessed with the correct type. Using **Proto DataStore**, we know what types are stored and we will just provide them.
 
-## What's Protocol Buffers? 🔍
+## 🔍 What's Protocol Buffers? 
 
 Protocol Buffers were developed by Google for storing and interchanging all kinds of structured information. They are used for **serializing structured data**. It is similar to XML and other similar data formats, but **it's smaller, faster and simpler**.
 
 If you don't know what serialization is, it's the process of translating a data structure or object state into a format that can be stored, like for example, a file or a memory data buffer.
 
-### How Protocol Buffers work?👷🏻
+### 👷🏻 How Protocol Buffers work?
 
 We need to define how we want our data to be structured once, and the compiler will generate the source code for us to easily read and write the structured data. 
 
 That said, with **Proto Datastore** we will serialize and save our custom data structure using Protocol Buffers and of course deserialize and read the values whenever we need to.
 
-### Let's dive 🤿
+### 🤿 Let's dive 
 
 In this simple [project](https://github.com/yalematta/datastore-demo), we are implementing the same _**Remember Me**_ functionality as in the previous post. We are currently using **SharedPreferences** to store this value and redirect the user to the Welcome screen once it's checked. We will migrate the code to use **Proto DataStore**.
 
@@ -38,7 +38,7 @@ In this simple [project](https://github.com/yalematta/datastore-demo), we are im
 To get your hands on the code, consider checking this [GitHub repo](https://github.com/yalematta/datastore-demo). <br>
 The final code is located in the [_proto_datastore_](https://github.com/yalematta/datastore-demo/tree/proto_datastore) branch.
 
-## Define Protobuf schema 🏷️
+## 🏷️ Define Protobuf schema 
 
 In order to use **Proto Datastore** we will need to define our Protobuf schema in a new `.proto` file. So instead of creating a model class in Kotlin, we will define it in a Protobuf schema instead. And there's a **new syntax** that we need to follow when writing this schema.
 
@@ -72,7 +72,7 @@ By taking a look at the [documentation](https://developers.google.com/protocol-b
 
 We create an object **UserPreferences** with 2 member fields: a bool, a string and an int32. Don't be confused when you see these 1, 2 and 3. These are not actual values but unique numbers to identify our fields in the _message binary format_ and they **should not be changed** once our message object is in use.
 
-## Dependencies 🔌
+## 🔌 Dependencies 
 
 Before we continue let's place this **plugin** at the top of our build.gradle file.
 
@@ -92,7 +92,7 @@ Rebuild the project to see those files inside the java (generated) folder.
 
 We find a new **UserPrefs** folder that represents our proto file,  and a **UserPreferences** class that represents our message object. Inside it we have java code that implements some getters and setters for this UserPreferences message object.
 
-## Serializer ↪️
+## ↪️ Serializer 
 
 To tell DataStore how to read and write the data type we defined in the proto file, we need to implement a Serializer. The Serializer defines also the default value to be returned if there's no data saved yet.
 
@@ -100,19 +100,19 @@ Back in our project, we create a class called **UserPreferencesSerializer** whic
 
 <script src="https://gist.github.com/yalematta/de4e14ae3e6c154cca432eecb31cd8e1.js"></script>
 
-## DataStore Repository 🗃️
+## 🗃️ DataStore Repository 
 
 Next we create our Repository which we call **UserPreferencesRepository**.
 
 <script src="https://gist.github.com/yalematta/dc5d09a3f1fe116b673bc1b0e6c49db0.js"></script>
 
-### Read from DataStore 📋
+### 📋 Read from DataStore 
 
 We create a new variable called userPreferencesFlow of type Flow<UserPreferences>. We use our dataStore to read the data and catch exceptions if there is any and emit the default instance of UserPreferences in that case.
 
 <script src="https://gist.github.com/yalematta/0a71f274d6ad057bdddc2c9087fc9434.js"></script>
 
-### Write to DataStore 📝
+### 📝 Write to DataStore 
 
 We create the suspend updateUsername function which will update one field from our UserPreferences member values. We will call **`preference.toBuilder().`** and we choose the setter method that we need from our generated class.
 
@@ -120,13 +120,13 @@ We create the suspend updateUsername function which will update one field from o
 
 P.S: Don't forget to create a method to update each field.
 
-### Clear DataStore 🆑
+### 🆑 Clear DataStore 
 
 To clear data, we can either clear the preferences all together or clear a specific preference by its method from our generated class.
 
 <script src="https://gist.github.com/yalematta/47c77317f29dee5b1a047bee985898c8.js"></script>
 
-## Call it from the ViewModel 🤙🏼
+## 🤙🏼 Call it from the ViewModel 
 
 In our **LoginViewModel**, we create a variable for our **UserPreferences**, read its data from our DataStore as a Flow and then convert it to LiveData.
 
@@ -136,15 +136,15 @@ Next we create a new function named **saveUserPreferences** and we pass to it th
 
 **LoginViewModelFactory** is a ViewModelProvider.Factory that is responsible to create our instance of **LoginViewModel** later in our Activity. We will pass to it the **DataStoreRepository** which is need in **LoginViewModel**'s constructor.
 
-## Observe it in the Activity 🔬
+## 🔬 Observe it in the Activity 
 
-### Create DataStore 🗄️
+### 🗄️ Create DataStore 
 
 In our Activity, we first create our userPreferencesDataStore and we initialize it and pass to it a file name as well as our Serializer class. 
 
 <script src="https://gist.github.com/yalematta/55129c3f89abfc16731669495395347c.js"></script>
 
-### Migrate from SharedPreferences 📦
+### 📦 Migrate from SharedPreferences 
 
 If we are migrating our existing data from the SharedPreferences, when creating our DataStore, we should add a migration based on the SharedPreferences name. 
 
@@ -162,7 +162,7 @@ And whenever we click our login button, we store the value from our editText and
 
 <script src="https://gist.github.com/yalematta/3c9193d6c6e1108c641d8a728f883472.js"></script>
 
-## Key Takeaways 💡
+## 💡 Key Takeaways 
 
 Now that we migrated to Preferences DataStore let's recap! 
 
@@ -182,6 +182,6 @@ DataStore has 2 different implementations: Preferences DataStore and Proto DataS
 - ensures Type Safety
 - requires defining a schema using Protocol Buffers
 
-## Up next ⏭
+## ⏭ Up next 
 
 If this post was of any help to you, or if you'd like me to write about any specific Android related topics, let me know! Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
