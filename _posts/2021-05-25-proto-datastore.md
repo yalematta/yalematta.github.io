@@ -44,9 +44,9 @@ In order to use **Proto Datastore** we will need to define our Protobuf schema i
 
 We will install a plugin in Android Studio called **Protocol Buffer Editor** that will help us write the Proto file. Make sure to install it before creating your proto files.
 
-<img src="../assets/img/protobuf_plugin.png" width="400"/> 
+<img src="../assets/img/protobuf_plugin.png" width="600"/> 
 
-Once installed, we switch to our **Project View** and under **`app/src/main`** we create a new directory called **`proto`**. Inside this directory we create a new file **`user_prefs.proto`** where we define our Protocol Buffer schema as follows:
+Once installed, we switch to our **Project View** and under **`app/src/main`** we create a new directory called **proto**. Inside this directory we create a new file **`user_prefs.proto`** where we define our Protocol Buffer schema as follows:
 
 <script src="https://gist.github.com/yalematta/cfa7afec0e8f9a72c08fe213b359182f.js"></script>
 
@@ -65,21 +65,21 @@ message UserPreferences {
 
 Let me walk you through this syntax:
 
-#### Syntax
+### 1️⃣ Syntax
 
 There are 2 versions for the Protobuff syntax: proto2 and proto3. You can check the [documention](https://developers.google.com/protocol-buffers/docs/proto3) for more info regarding these two different versions. In our case, we are going to use **proto3**.
 
-#### Options
+### 2️⃣ Options
 
 Then, we are going to write 2 options:
 First, our **`java_package`** name. We need it in order to tell our compiler where to generate our classes from this protocol buffer. 
 The second option is **`java_multiple_files`**. We will set it to true and this means that we need to create a separate file for each top level **message** object of this proto file.
 
-#### Message
+### 3️⃣ Message
 
 The **message** keyword defines the data structure. And inside it, we define the members of this structure. As you may have noticed we have different primitive types  in this syntax. 
 
-<img src="../assets/img/protobuf_types.png" width="400"/> 
+<img src="../assets/img/protobuf_types.png" width="600"/> 
 
 By taking a look at the [documentation](https://developers.google.com/protocol-buffers/docs/proto3), we can learn that: int32 in Java represents an Integer, int64 a Long and bool is a Boolean.
 
@@ -134,7 +134,7 @@ protobuf {
 
 Now that we have added this plugin, we should be able to see the automatically generated files by this plugin from our **`user_prefs.proto`** file. 
 
-Rebuild the project to see those files inside the java (generated) folder. We find a new `UserPrefs` folder that represents our proto file,  and a **UserPreferences** class that represents our message object. Inside it we have java code that implements some getters and setters for this UserPreferences message object.
+Rebuild the project to see those files inside the java (generated) folder. We find a new **UserPrefs** folder that represents our proto file,  and a **UserPreferences** class that represents our message object. Inside it we have java code that implements some getters and setters for this UserPreferences message object.
 
 ## Serializer ↪️
 
@@ -268,7 +268,7 @@ class LoginViewModelFactory(
     }
 }
 ```
-**LoginViewModelFactory** is a `ViewModelProvider.Factory` that is responsible to create our instance of **LoginViewModel** later in our Activity. We will pass to it the **DataStoreRepository** which is need in **LoginViewModel**'s constructor.
+**LoginViewModelFactory** is a ViewModelProvider.Factory that is responsible to create our instance of **LoginViewModel** later in our Activity. We will pass to it the **DataStoreRepository** which is need in **LoginViewModel**'s constructor.
 
 ## Observe it in the Activity 🔬
 
@@ -396,6 +396,6 @@ DataStore has 2 different implementations: Preferences DataStore and Proto DataS
 - ensures Type Safety
 - requires defining a schema using Protocol Buffers
 
-</br>
-If this post was of any help to you, or if you'd like me to write about another specific Android related topics, let me know! </br>
+<br>
+If this post was of any help to you, or if you'd like me to write about another specific Android related topics, let me know! <br>
 Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
