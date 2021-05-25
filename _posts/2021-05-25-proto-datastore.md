@@ -167,7 +167,7 @@ And whenever we click our login button, we store the value from our editText and
 Now that we migrated to Preferences DataStore let's recap! 
 
 **DataStore**:
-- is a replacement for SharedPreferences addressing most of its downsides
+- is a replacement for SharedPreferences
 - has a fully asynchronous API using Kotlin coroutines and Flow
 - guarantees data consistency
 - handles data migration
