@@ -284,10 +284,6 @@ hr {
   padding-right: 10px;
 }
 
-.menu-content a:hover {
-color: var(--link-color);
-}
-
 .social-icons {
   float: right;
 }
