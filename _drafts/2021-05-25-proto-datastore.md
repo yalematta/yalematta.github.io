@@ -9,15 +9,6 @@ image: proto_datastore.jpg
 
 In a [previous post](https://yalematta.dev/blog/preferences-datastore.html) we have explored how to use `Preferences DataStore` to migrate our `SharedPreferences`. And in this post we will focus on **`Proto DataStore`**.
 
-### Let's dive 🤿
-
-In this simple [project](https://github.com/yalematta/datastore-demo), we are implementing the same _**Remember Me**_ functionality as in the previous post. We are currently using `SharedPreferences` to store this value and redirect the user to the Welcome screen once it's checked. We will migrate the code to use `Proto DataStore`.
-
-<img src="../assets/img/proto_login.png" width="300"/> <img src="../assets/img/proto_welcome.png" width="300"/>
-
-To get your hands on the code, consider checking this [GitHub repo](https://github.com/yalematta/datastore-demo). <br>
-The final code is located in the [_proto_datastore_](https://github.com/yalematta/datastore-demo/tree/proto_datastore) branch.
-
 ## What makes `Proto DataStore` different? 🤔
 
 While both `Preferences` and `Proto DataStore` allow saving data, they do this in different ways. One important feature is applied only when using `Proto DataStore`, and it is **Type Safety**. 
@@ -37,6 +28,15 @@ If you don't know what serialization is, it's the process of translating a data 
 We need to define how we want our data to be structured once, and the compiler will generate the source code for us to easily read and write the structured data. 
 
 That said, with `Proto Datastore` we will serialize and save our custom data structure using Protocol Buffers and of course deserialize and read the values whenever we need to.
+
+### Let's dive 🤿
+
+In this simple [project](https://github.com/yalematta/datastore-demo), we are implementing the same _**Remember Me**_ functionality as in the previous post. We are currently using `SharedPreferences` to store this value and redirect the user to the Welcome screen once it's checked. We will migrate the code to use `Proto DataStore`.
+
+<img src="../assets/img/proto_login.png" width="300"/> <img src="../assets/img/proto_welcome.png" width="300"/>
+
+To get your hands on the code, consider checking this [GitHub repo](https://github.com/yalematta/datastore-demo). <br>
+The final code is located in the [_proto_datastore_](https://github.com/yalematta/datastore-demo/tree/proto_datastore) branch.
 
 ## Define Protobuf schema 🏷️
 
