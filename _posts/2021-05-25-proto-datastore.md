@@ -50,19 +50,6 @@ Once installed, we switch to our **Project View** and under **`app/src/main`** w
 
 <script src="https://gist.github.com/yalematta/cfa7afec0e8f9a72c08fe213b359182f.js"></script>
 
-```kotlin
-syntax = "proto3";
-
-option java_package= "com.yalematta.datastore_demo";
-option java_multiple_files = true;
-
-message UserPreferences {
-  bool remember = 1;
-  string username = 2;
-  int32 luckyNumber = 3;
-}
-```
-
 Let me walk you through this syntax:
 
 ### 1️⃣ Syntax
@@ -91,46 +78,13 @@ Before we continue let's place this **plugin** at the top of our build.gradle fi
 
 <script src="https://gist.github.com/yalematta/b7bfcee4e0dae16c35fd55530c32b527.js"></script>
 
-```
-plugins {
-    id "com.google.protobuf" version "0.8.12"
-}
-```
-
 Then we need to add two dependencies, one for Protobuf and one for Proto DataStore.
 
 <script src="https://gist.github.com/yalematta/dfcf0b37b4c885a207626f5bb25238a1.js"></script>
 
-```
-// proto dataStore
-implementation  "androidx.datastore:datastore:1.0.0-beta01"
-implementation  "com.google.protobuf:protobuf-javalite:3.10.0"
-```
-
 And finally at the end of our build.gradle file we configure Protobuf and we **sync our project**.
 
 <script src="https://gist.github.com/yalematta/bbece7f997ba217e93676b6e64038afb.js"></script>
-
-```
-protobuf {
-    protoc {
-        artifact = "com.google.protobuf:protoc:3.10.0"
-    }
-
-    // Generates the java Protobuf-lite code for the Protobufs in this project. See
-    // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
-    // for more information.
-    generateProtoTasks {
-        all().each { task ->
-            task.builtins {
-                java {
-                    option 'lite'
-                }
-            }
-        }
-    }
-}
-```
 
 Now that we have added this plugin, we should be able to see the automatically generated files by this plugin from our **`user_prefs.proto`** file. 
 
@@ -146,33 +100,11 @@ Back in our project, we create a class called **UserPreferencesSerializer** whic
 
 <script src="https://gist.github.com/yalematta/de4e14ae3e6c154cca432eecb31cd8e1.js"></script>
 
-```
-object UserPreferencesSerializer : Serializer<UserPreferences> {
-    override val defaultValue: UserPreferences = UserPreferences.getDefaultInstance()
-    override suspend fun readFrom(input: InputStream): UserPreferences {
-        try {
-            return UserPreferences.parseFrom(input)
-        } catch (exception: InvalidProtocolBufferException) {
-            throw CorruptionException("Cannot read proto.", exception)
-        }
-    }
-
-    override suspend fun writeTo(t: UserPreferences, output: OutputStream) = 
-        t.writeTo(output)
-}
-```
-
 ## DataStore Repository 🗃️
 
 Next we create our Repository which we call **UserPreferencesRepository**.
 
 <script src="https://gist.github.com/yalematta/dc5d09a3f1fe116b673bc1b0e6c49db0.js"></script>
-
-```
-class UserPreferencesRepository(private val userPreferencesStore: DataStore<UserPreferences>){
-    ...
-}
-```
 
 ### Read from DataStore 📋
 
@@ -180,32 +112,11 @@ We create a new variable called userPreferencesFlow of type Flow<UserPreferences
 
 <script src="https://gist.github.com/yalematta/0a71f274d6ad057bdddc2c9087fc9434.js"></script>
 
-```
-    val userPreferencesFlow: Flow<UserPreferences> = userPreferencesStore.data
-        .catch { exception ->
-            // dataStore.data throws an IOException when an error is encountered when reading data
-            if (exception is IOException) {
-                Log.e(TAG, "Error reading sort order preferences.", exception)
-                emit(UserPreferences.getDefaultInstance())
-            } else {
-                throw exception
-            }
-        }
-```
-
 ### Write to DataStore 📝
 
 We create the suspend updateUsername function which will update one field from our UserPreferences member values. We will call **`preference.toBuilder().`** and we choose the setter method that we need from our generated class.
 
 <script src="https://gist.github.com/yalematta/8df794025887336597365c5558a820d7.js"></script>
-
-```
-    suspend fun updateUsername(username: String) {
-        userPreferencesStore.updateData { preferences ->
-            preferences.toBuilder().setUsername(username).build()
-        }
-    }
-```
 
 P.S: Don't forget to create a method to update each field.
 
@@ -215,20 +126,6 @@ To clear data, we can either clear the preferences all together or clear a speci
 
 <script src="https://gist.github.com/yalematta/47c77317f29dee5b1a047bee985898c8.js"></script>
 
-```
-    suspend fun clearDataStore() {
-        userPreferencesStore.updateData { preferences ->
-            preferences.toBuilder().clear().build()
-        }
-    }
-
-    suspend fun clearUsername() {
-        userPreferencesStore.updateData { preferences ->
-            preferences.toBuilder().clearUsername().build()
-        }
-    }
-```
-
 ## Call it from the ViewModel 🤙🏼
 
 In our **LoginViewModel**, we create a variable for our **UserPreferences**, read its data from our DataStore as a Flow and then convert it to LiveData.
@@ -237,39 +134,6 @@ Next we create a new function named **saveUserPreferences** and we pass to it th
 
 <script src="https://gist.github.com/yalematta/0ca185c7acc4ef45b170cfa476946d5f.js"></script>
 
-```
-class LoginViewModel(private val userPreferencesRepository: UserPreferencesRepository) : ViewModel() {
-
-    val userPreferencesFlow = userPreferencesRepository.userPreferencesFlow.asLiveData()
-
-    fun saveUserPreferences(remember: Boolean, username: String, luckyNumber: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            userPreferencesRepository.updateRemember(remember)
-            userPreferencesRepository.updateUsername(username)
-            userPreferencesRepository.updateLuckyNumber(luckyNumber)
-        }
-    }
-
-    fun clearUserPreferences() {
-        viewModelScope.launch(Dispatchers.IO) {
-            userPreferencesRepository.clearDataStore()
-        }
-    }
-}
-
-class LoginViewModelFactory(
-    private val userPreferencesRepository: UserPreferencesRepository
-) : ViewModelProvider.Factory {
-
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return LoginViewModel(userPreferencesRepository) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
-}
-```
 **LoginViewModelFactory** is a ViewModelProvider.Factory that is responsible to create our instance of **LoginViewModel** later in our Activity. We will pass to it the **DataStoreRepository** which is need in **LoginViewModel**'s constructor.
 
 ## Observe it in the Activity 🔬
@@ -279,15 +143,6 @@ class LoginViewModelFactory(
 In our Activity, we first create our userPreferencesDataStore and we initialize it and pass to it a file name as well as our Serializer class. 
 
 <script src="https://gist.github.com/yalematta/55129c3f89abfc16731669495395347c.js"></script>
-
-```kotlin
-private const val DATA_STORE_FILE_NAME = "user_prefs.pb"
-
-val Context.userPreferencesStore: DataStore<UserPreferences> by dataStore(
-    fileName = DATA_STORE_FILE_NAME,
-    serializer = UserPreferencesSerializer
-)
-```
 
 ### Migrate from SharedPreferences 📦
 
@@ -301,82 +156,11 @@ DataStore will be able to migrate from SharedPreferences to DataStore automatica
 
 <script src="https://gist.github.com/yalematta/6c975819f7a3e1535f24863c9b20d4a0.js"></script>
 
-```kotlin
-const val USER_PREFERENCES_NAME = "user_preferences"
-private const val DATA_STORE_FILE_NAME = "user_prefs.pb"
-
-val Context.userPreferencesStore: DataStore<UserPreferences> by dataStore(
-    fileName = DATA_STORE_FILE_NAME,
-    serializer = UserPreferencesSerializer,
-    produceMigrations = { context ->
-        listOf(sharedPrefsMigration(context))
-    }
-)
-
-fun sharedPrefsMigration(context: Context) = SharedPreferencesMigration(
-    context, USER_PREFERENCES_NAME) { sharedPrefs: SharedPreferencesView, currentData: UserPreferences ->
-    // Define the mapping from SharedPreferences to UserPreferences
-    currentData
-}
-```
-
 Inside our onCreate function, we initialize our ViewModel and we observe our fields' values, so that whenever this data changes we will update it in its corresponding text field. 
 
 And whenever we click our login button, we store the value from our editText and checkBox field and update it in our DataStore using the saveUserPreferences function.
 
 <script src="https://gist.github.com/yalematta/3c9193d6c6e1108c641d8a728f883472.js"></script>
-
-```kotlin
-class LoginActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityLoginBinding
-    private lateinit var viewModel: LoginViewModel
-
-    private var rememberMe = false
-    private var luckyNumber = 0
-    private lateinit var username: String
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-
-        viewModel = ViewModelProvider(
-            this,
-            LoginViewModelFactory(UserPreferencesRepository(userPreferencesStore))
-        ).get(LoginViewModel::class.java)
-
-        viewModel.userPreferencesFlow.observe(this, { userPreferences ->
-            rememberMe = userPreferences.remember
-            username = userPreferences.username
-            luckyNumber = userPreferences.luckyNumber
-            if (rememberMe) {
-                startActivity(Intent(this, WelcomeActivity::class.java))
-            }
-        })
-
-        binding.login.setOnClickListener {
-            if (binding.remember.isChecked) {
-                val name = binding.username.text.toString()
-                var number = luckyNumber
-                if (binding.luckyNumber.text.toString().isNotEmpty()) {
-                    number = binding.luckyNumber.text.toString().toInt()
-                }
-                viewModel.saveUserPreferences(true, name, number)
-            }
-            startActivity(Intent(this, WelcomeActivity::class.java))
-        }
-
-        binding.remember.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
-            if (!compoundButton.isChecked) {
-                viewModel.clearUserPreferences()
-            }
-        }
-
-    }
-}
-```
 
 ## Key Takeaways 💡
 
@@ -400,5 +184,4 @@ DataStore has 2 different implementations: Preferences DataStore and Proto DataS
 
 ## Up next ⏭
 
-<br>
 If this post was of any help to you, or if you'd like me to write about any specific Android related topics, let me know! Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
