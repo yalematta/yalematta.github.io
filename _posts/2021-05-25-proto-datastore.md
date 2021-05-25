@@ -134,7 +134,9 @@ protobuf {
 
 Now that we have added this plugin, we should be able to see the automatically generated files by this plugin from our **`user_prefs.proto`** file. 
 
-Rebuild the project to see those files inside the java (generated) folder. We find a new **UserPrefs** folder that represents our proto file,  and a **UserPreferences** class that represents our message object. Inside it we have java code that implements some getters and setters for this UserPreferences message object.
+Rebuild the project to see those files inside the java (generated) folder. 
+
+We find a new **UserPrefs** folder that represents our proto file,  and a **UserPreferences** class that represents our message object. Inside it we have java code that implements some getters and setters for this UserPreferences message object.
 
 ## Serializer ↪️
 
@@ -396,6 +398,7 @@ DataStore has 2 different implementations: Preferences DataStore and Proto DataS
 - ensures Type Safety
 - requires defining a schema using Protocol Buffers
 
+## Up next ⏭
+
 <br>
-If this post was of any help to you, or if you'd like me to write about another specific Android related topics, let me know! <br>
-Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
+If this post was of any help to you, or if you'd like me to write about any specific Android related topics, let me know! Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
