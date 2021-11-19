@@ -8,9 +8,9 @@ I'm an **Android Engineer** and a **Community Lover**.
 Android
 -------
 
-I'm based in Beirut, Lebanon 🇱🇧 and working for [Neo Mena Technologies](https://neo.ae) 🇰🇼. 
+I'm from Lebanon 🇱🇧, currently based in Denmark 🇩🇰 and working for [Storytel](https://mofibo.com/) 🇸🇪. 
 
-I've been developing for Android for over 5 years now (using Koltin for the last 2 years). I’m a huge advocate of Kotlin and functional programming. <br> And I'm an enthusiast about mentorship, open source and knowledge sharing within the community. 
+I've been developing for Android for over 5 years now (using Kotlin for the last 2 years). I’m a huge advocate of Kotlin and functional programming. <br> And I'm an enthusiast about mentorship, open source and knowledge sharing within the community. 
 
 Community & Public Speaking
 ---------------------------
