@@ -5,10 +5,16 @@ title: Talking
 
 Do you want me to speak at your conference/meetup? <br> You can find my talks/abstracts on my [Sessionize](https://sessionize.com/yalematta/) profile.
 
+2022
+----
+
+- International Women's Day '22 (Panel Discussion) - [🎤 Girls' Education in Tech [in Arabic]](https://youtu.be/GzRxQtpyVbY) 
+
 2021
 ----
 
-- TECH(K)NOW Day '21 - [📄 Practical Animations with MotionLayout](https://speakerdeck.com/yalematta/practical-animations-with-motionlayout)
+- GDG MENA Digital Days '21 - [🎤 What's new in Android 12](https://youtu.be/Nq85BGd1tHs) 
+- TECH(K)NOW Day '21 - [📄 Practical Animations with MotionLayout](https://speakerdeck.com/yalematta/practical-animations-with-motionlayout) [🎤 Video](https://youtu.be/aKpBiwrQrRY)
 
 2020
 ----
