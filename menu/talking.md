@@ -14,7 +14,7 @@ Do you want me to speak at your conference/meetup? <br> You can find my talks/ab
 ----
 
 - GDG MENA Digital Days '21 - [🎤 What's new in Android 12](https://youtu.be/Nq85BGd1tHs) 
-- TECH(K)NOW Day '21 - [📄 Practical Animations with MotionLayout](https://speakerdeck.com/yalematta/practical-animations-with-motionlayout) [🎤 Video](https://youtu.be/aKpBiwrQrRY)
+- TECH(K)NOW Day '21 - [🎤 Practical Animations with MotionLayout](https://youtu.be/aKpBiwrQrRY)
 
 2020
 ----
