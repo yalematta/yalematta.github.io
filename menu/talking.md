@@ -8,7 +8,7 @@ Do you want me to speak at your conference/meetup? <br> You can find my talks/ab
 2022
 ----
 
-- International Women's Day '22 (Panel Discussion) - [🎤 Girls' Education in Tech [in Arabic]](https://youtu.be/GzRxQtpyVbY) 
+- Panel Discussion IWD '22 - [🎤 Girls' Education in Tech [in Arabic]](https://youtu.be/GzRxQtpyVbY) 
 
 2021
 ----
