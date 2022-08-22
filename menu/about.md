@@ -25,17 +25,14 @@ Projects I have worked on
 -------------------------
 
 <p>
-  <img src="https://user-images.githubusercontent.com/5787917/185948047-77cab1a0-f47c-43a9-8c00-6d22e8884c92.png" width="200">
+  <img src="https://user-images.githubusercontent.com/5787917/185948047-77cab1a0-f47c-43a9-8c00-6d22e8884c92.png" width="150">
     <a href="https://play.google.com/store/apps/details?id=grit.storytel.app" />
-  </img>
 
-  <img src="https://user-images.githubusercontent.com/5787917/185949589-f9859783-dbd9-4273-b72f-d2fb951ca91b.png" width="200">
+  <img src="https://user-images.githubusercontent.com/5787917/185949589-f9859783-dbd9-4273-b72f-d2fb951ca91b.png" width="150">
     <a href="https://play.google.com/store/apps/details?id=neo.nbkc.smartwealth" />
-  </img>
 
-  <img src="https://user-images.githubusercontent.com/5787917/185947878-73df763f-49e6-4a26-afe9-95401f59cb9e.jpeg" width="200">
+  <img src="https://user-images.githubusercontent.com/5787917/185947878-73df763f-49e6-4a26-afe9-95401f59cb9e.jpeg" width="150">
     <a href="https://play.google.com/store/apps/details?id=com.synkers.synkers" />
-  </img>
 </p>
 
 
