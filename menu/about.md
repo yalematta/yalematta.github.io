@@ -21,7 +21,7 @@ Projects I have worked on
          alt="Storytel" title="Click to enlarge"></a>
     
 <a href="https://play.google.com/store/apps/details?id=neo.nbkc.smartwealth">
-    <img src="https://user-images.githubusercontent.com/5787917/186483590-5755ca2a-a2db-45d2-acfe-2d384383542a.jpeg" width="150" 
+    <img src="https://user-images.githubusercontent.com/5787917/186485234-6e684e75-cacf-4af7-a578-a650ecc4e2e3.jpeg" width="150" 
          alt="Smartwealth" title="Click to enlarge"></a>
     
 <a href="https://play.google.com/store/apps/details?id=com.synkers.synkers">
