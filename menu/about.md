@@ -17,7 +17,7 @@ Projects I have worked on
 
 <p>
 <a href="https://play.google.com/store/apps/details?id=grit.storytel.app">
-    <img src="https://user-images.githubusercontent.com/5787917/185948047-77cab1a0-f47c-43a9-8c00-6d22e8884c92.png" width="150" 
+    <img src="https://user-images.githubusercontent.com/5787917/186480370-ac4863c2-f215-450e-82c5-4e331244d8d5.png" width="150" 
          alt="Storytel" title="Click to enlarge"></a>
     
 <a href="https://play.google.com/store/apps/details?id=neo.nbkc.smartwealth">
@@ -25,7 +25,7 @@ Projects I have worked on
          alt="Smartwealth" title="Click to enlarge"></a>
     
 <a href="https://play.google.com/store/apps/details?id=com.synkers.synkers">
-    <img src="https://user-images.githubusercontent.com/5787917/185947878-73df763f-49e6-4a26-afe9-95401f59cb9e.jpeg" width="150" 
+    <img src="https://user-images.githubusercontent.com/5787917/186480222-9c767aaa-73f7-48f3-8e2e-5b018007b4e4.png" width="150" 
          alt="Ostaz" title="Click to enlarge"></a>
 </p>
 
