@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Specific Language for each App"
+title: "A Different Language for each App"
 author: "Layale Matta"
 categories: blog
 tags: [android, language, android13]
@@ -9,7 +9,7 @@ image: per_app_language.jpg
 
 [Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on your whole Android device.
 
-## 🤔 Try it on your device 
+## 📱 Try it on your device 
 
 While both **Preferences** and **Proto DataStore** allow saving data, they do this in different ways. One important feature is applied only when using **Proto DataStore**, and it is **Type Safety**. 
 
