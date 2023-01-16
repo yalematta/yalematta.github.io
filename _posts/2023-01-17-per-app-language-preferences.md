@@ -7,9 +7,9 @@ tags: [android, language, android13]
 image: per_app_language.jpg
 ---
 
-In a [previous post](https://yalematta.dev/blog/preferences-datastore.html) we have explored how to use **Preferences DataStore** to migrate our **SharedPreferences**. And in this post we will focus on **Proto DataStore**.
+[Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on your whole Android device.
 
-## 🤔 What makes **Proto DataStore** different? 
+## 🤔 Try it on your device 
 
 While both **Preferences** and **Proto DataStore** allow saving data, they do this in different ways. One important feature is applied only when using **Proto DataStore**, and it is **Type Safety**. 
 
