@@ -11,6 +11,8 @@ image: per_app_language.jpg
 
 ## 📱 Try it on your device 
 
+<!---
+
 While both **Preferences** and **Proto DataStore** allow saving data, they do this in different ways. One important feature is applied only when using **Proto DataStore**, and it is **Type Safety**. 
 
 With **Proto DataStore** we don't have to use keys. Instead we define a schema using Protocol Buffers. And with Protocol Buffers we can persist **strongly typed data**.
@@ -181,6 +183,8 @@ DataStore has 2 different implementations: Preferences DataStore and Proto DataS
 **Proto DataStore**:
 - ensures Type Safety
 - requires defining a schema using Protocol Buffers
+
+-->
 
 ## ⏭ Up next 
 
