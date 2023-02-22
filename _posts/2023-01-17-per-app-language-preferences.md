@@ -11,15 +11,19 @@ image: per_app_language.jpg
 
 <!---
 
-
 ## 📱 Try it on your device 
 
-Navigate to the Youtube app for example, and long click to enter its App Info. You will notice a new section: **App Language**. 
+Access through the System settings
 
-<img src="../assets/img/app-language.png" width="300"/>
+Settings > System > Languages & Input > App Languages > (select an app)
 
-Choosing one language from this page, will change the language inside the Youtube app. 
+Access through Apps settings
 
+Settings > Apps > (select an app) > Language
+
+Navigate to the Youtube app for example, and long click to enter its App Info. You will notice a new section: **App Language**. Choosing one language from this page, will change the language inside the Youtube app. And if you navigate to your device settings and ... , you will be able to select a specific language for each app on your device.
+
+<img src="../assets/img/app-languages.png" width="300"/>
 
 While both **Preferences** and **Proto DataStore** allow saving data, they do this in different ways. One important feature is applied only when using **Proto DataStore**, and it is **Type Safety**. 
 
