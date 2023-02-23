@@ -7,60 +7,33 @@ tags: [android, language, android13]
 image: per_app_language.jpg
 ---
 
-[Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on your whole Android device.
+[Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on my whole Android device.
 
 <!---
 
 ## 📱 Try it on your device 
 
-Access through the System settings
-
-Settings > System > Languages & Input > App Languages > (select an app)
-
-Access through Apps settings
-
-Settings > Apps > (select an app) > Language
-
-Navigate to the Youtube app for example, and long click to enter its App Info. You will notice a new section: **App Language**. Choosing one language from this page, will change the language inside the Youtube app. And if you navigate to your device settings and ... , you will be able to select a specific language for each app on your device.
+Navigate to your System settings: Settings > System > Languages & Input > App Languages. Select an app and then choose a specific language for it.
+Or you can navigate to your Apps settings: Settings > Apps. And select an app, then under Language you can choose a specific language for it.
 
 <img src="../assets/img/app-languages.png" width="300"/>
 
-While both **Preferences** and **Proto DataStore** allow saving data, they do this in different ways. One important feature is applied only when using **Proto DataStore**, and it is **Type Safety**. 
+## 🔍 Add it to your App 
 
-With **Proto DataStore** we don't have to use keys. Instead we define a schema using Protocol Buffers. And with Protocol Buffers we can persist **strongly typed data**.
+If your app supports different languages, this feature is for you. Otherwise, look into [localizing your Android app](https://developer.android.com/guide/topics/resources/localization) first.
 
-One of the downsides of **SharedPreferences** and **Preferences DataStore** is that there is no way to ensure that keys are accessed with the correct type. Using **Proto DataStore**, we know what types are stored and we will just provide them.
+Implementing this feature in your app requires 2 simple steps: 
 
-## 🔍 What's Protocol Buffers? 
+### 1️⃣ Specify your app’s languages
 
-Protocol Buffers were developed by Google for storing and interchanging all kinds of structured information. They are used for **serializing structured data**. It is similar to XML and other similar data formats, but **it's smaller, faster and simpler**.
+Create a file called `res/xml/locales_config.xml`. This [Sample file](https://developer.android.com/guide/topics/resources/app-languages#sample-config) will help you construct yours. Make sure to only have your localized languages specified there. Otherwise selecting a language that's not supported by your app will fall back to the default language, which is the locale specified in `res/values/strings.xml`
 
-If you don't know what serialization is, it's the process of translating a data structure or object state into a format that can be stored, like for example, a file or a memory data buffer.
+### 2️⃣ Options
 
-### 👷🏻 How Protocol Buffers work?
 
 We need to define how we want our data to be structured once, and the compiler will generate the source code for us to easily read and write the structured data. 
 
 That said, with **Proto Datastore** we will serialize and save our custom data structure using Protocol Buffers and of course deserialize and read the values whenever we need to.
-
-### 🤿 Let's dive 
-
-In this simple [project](https://github.com/yalematta/datastore-demo), we are implementing the same _**Remember Me**_ functionality as in the previous post. We are currently using **SharedPreferences** to store this value and redirect the user to the Welcome screen once it's checked. We will migrate the code to use **Proto DataStore**.
-
-<img src="../assets/img/proto_login.png" width="300"/> <img src="../assets/img/proto_welcome.png" width="300"/>
-
-To get your hands on the code, consider checking this [GitHub repo](https://github.com/yalematta/datastore-demo). <br>
-The final code is located in the [_proto_datastore_](https://github.com/yalematta/datastore-demo/tree/proto_datastore) branch.
-
-## 🏷️ Define Protobuf schema 
-
-In order to use **Proto Datastore** we will need to define our Protobuf schema in a new `.proto` file. So instead of creating a model class in Kotlin, we will define it in a Protobuf schema instead. And there's a **new syntax** that we need to follow when writing this schema.
-
-We will install a plugin in Android Studio called **Protocol Buffer Editor** that will help us write the Proto file. Make sure to install it before creating your proto files.
-
-<img src="../assets/img/protobuf_plugin.png" width="600"/> 
-
-Once installed, we switch to our **Project View** and under **`app/src/main`** we create a new directory called **proto**. Inside this directory we create a new file **`user_prefs.proto`** where we define our Protocol Buffer schema as follows:
 
 <script src="https://gist.github.com/yalematta/cfa7afec0e8f9a72c08fe213b359182f.js"></script>
 
