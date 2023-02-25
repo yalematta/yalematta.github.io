@@ -15,7 +15,7 @@ Several users are bilingual, so they may require certain apps to be in different
 
 In my case, I am trying to learn a new foreign language. Changing the app language has allowed me to access some apps for brief periods of time while keeping my system's default language set to English. This has helped me become more familiar with the language, encouraging me to use it in order to navigate the app.
 
-Whatever your case may be, using this feature will allow you to fine-tune your experience to ideally fit you, no matter what language or combination you choose.
+Whatever your case may be, using this feature will allow you to fine-tune your experience to ideally fit you (and the user of your app), no matter what language or combination you choose.
 
 ## 📱 Try it on your device 
 
