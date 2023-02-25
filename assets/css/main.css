@@ -392,7 +392,7 @@ th, td {
 	color: #f39c12;
 }
 
-.fa-twitter {
+.fa-twitter::before {
   padding: 5px;
 	-o-transition:.5s;
   	-ms-transition:.5s;
