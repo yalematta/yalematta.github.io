@@ -14,7 +14,7 @@ image: per_app_language.jpg
 Navigate to your System settings: Settings > System > Languages & Input > App Languages. Select an app and then choose a specific language for it.
 Or you can navigate to your Apps settings: Settings > Apps. Select an app, then under Language you can also choose a specific language for it.
 
-<img src="../assets/img/per_app_language_01.jpg" width="300"/> <img src="../assets/img/per_app_language_02.jpg" width="300"/>
+<img src="../assets/img/per_app_language_01.jpg" width="300"/>
 
 ## 📋 Add it to your App 
 
@@ -44,7 +44,7 @@ Use the `resourceConfiguration` property in your app's module-level `build.gradl
 
 To test how this feature looks on your app: navigate to your app's info, find the Language section, change the Language of your app and check if it shows the correct language.
 
-<img src="../assets/img/per_app_language_03.jpg" width="300"/> <img src="../assets/img/per_app_language_04.jpg" width="300"/> <img src="../assets/img/per_app_language_05.jpg" width="300"/> 
+<img src="../assets/img/per_app_language_02.jpg" width="300"/> <img src="../assets/img/per_app_language_03.jpg" width="300"/> 
 
 ## ⏭ Up next 
 
