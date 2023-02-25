@@ -9,167 +9,42 @@ image: per_app_language.jpg
 
 [Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on my whole Android device.
 
-<!---
-
 ## 📱 Try it on your device 
 
 Navigate to your System settings: Settings > System > Languages & Input > App Languages. Select an app and then choose a specific language for it.
-Or you can navigate to your Apps settings: Settings > Apps. And select an app, then under Language you can choose a specific language for it.
+Or you can navigate to your Apps settings: Settings > Apps. Select an app, then under Language you can also choose a specific language for it.
 
-<img src="../assets/img/app-languages.png" width="300"/>
+<img src="../assets/img/per_app_language_01.jpg" width="300"/> <img src="../assets/img/per_app_language_02.jpg" width="300"/>
 
-## 🔍 Add it to your App 
+## 📋 Add it to your App 
 
-If your app supports different languages, this feature is for you. Otherwise, look into [localizing your Android app](https://developer.android.com/guide/topics/resources/localization) first.
+If your app supports different languages, you're ready to implement this feature. Otherwise, look into [localizing your Android app](https://developer.android.com/guide/topics/resources/localization) first, because adding per-app language settings to your app doesn't translate your app's resources automatically.
 
-Implementing this feature in your app requires 2 simple steps: 
+Implementing this feature in your app requires 3 simple steps: 
 
-### 1️⃣ Specify your app’s languages
+### 1️⃣ Add your app's supported languages to the System Settings
 
 Create a file called `res/xml/locales_config.xml`. This [Sample file](https://developer.android.com/guide/topics/resources/app-languages#sample-config) will help you construct yours. Make sure to only have your localized languages specified there. Otherwise selecting a language that's not supported by your app will fall back to the default language, which is the locale specified in `res/values/strings.xml`
 
-### 2️⃣ Options
+<script src="https://gist.github.com/yalematta/557eefd13a5a7d8d93ba0ed7244ac7b3.js"></script>
 
+### 2️⃣ Edit the Manifest
 
-We need to define how we want our data to be structured once, and the compiler will generate the source code for us to easily read and write the structured data. 
+In the manifest, add a line that points to this new file as follows:
 
-That said, with **Proto Datastore** we will serialize and save our custom data structure using Protocol Buffers and of course deserialize and read the values whenever we need to.
+<script src="https://gist.github.com/yalematta/2e8f9306306d09f4fa14d675998ba2ab.js"></script>
 
-<script src="https://gist.github.com/yalematta/cfa7afec0e8f9a72c08fe213b359182f.js"></script>
+### 3️⃣ Add your supported languages in Gradle
 
-Let me walk you through this syntax:
+Use the `resourceConfiguration` property in your app's module-level `build.gradle` file to specify the same languages. As long as the `resourceConfigurations` property is present, the build system will only include these specified languages in the APK, avoiding the inclusion of translated strings from libraries that may support languages other than the ones your app supports. 
 
-### 1️⃣ Syntax
+<script src="https://gist.github.com/yalematta/a148c9d6431a59bf21dbd5d93d743a65.js"></script>
 
-There are 2 versions for the Protobuff syntax: proto2 and proto3. You can check the [documention](https://developers.google.com/protocol-buffers/docs/proto3) for more info regarding these two different versions. In our case, we are going to use **proto3**.
+## 🎉 And you're done!
 
-### 2️⃣ Options
+To test how this feature looks on your app: navigate to your app's info, find the Language section, change the Language of your app and check if it shows the correct language.
 
-Then, we are going to write 2 options:
-First, our **`java_package`** name. We need it in order to tell our compiler where to generate our classes from this protocol buffer. 
-The second option is **`java_multiple_files`**. We will set it to true and this means that we need to create a separate file for each top level **message** object of this proto file.
-
-### 3️⃣ Message
-
-The **message** keyword defines the data structure. And inside it, we define the members of this structure. As you may have noticed we have different primitive types  in this syntax. 
-
-<img src="../assets/img/protobuf_types.png" width="600"/> 
-
-By taking a look at the [documentation](https://developers.google.com/protocol-buffers/docs/proto3), we can learn that: int32 in Java represents an Integer, int64 a Long and bool is a Boolean.
-
-We create an object **UserPreferences** with 2 member fields: a bool, a string and an int32. Don't be confused when you see these 1, 2 and 3. These are not actual values but unique numbers to identify our fields in the _message binary format_ and they **should not be changed** once our message object is in use.
-
-## 🔌 Dependencies 
-
-Before we continue let's place this **plugin** at the top of our build.gradle file.
-
-<script src="https://gist.github.com/yalematta/b7bfcee4e0dae16c35fd55530c32b527.js"></script>
-
-Then we need to add two dependencies, one for Protobuf and one for Proto DataStore.
-
-<script src="https://gist.github.com/yalematta/dfcf0b37b4c885a207626f5bb25238a1.js"></script>
-
-And finally at the end of our build.gradle file we configure Protobuf and we **sync our project**.
-
-<script src="https://gist.github.com/yalematta/bbece7f997ba217e93676b6e64038afb.js"></script>
-
-Now that we have added this plugin, we should be able to see the automatically generated files by this plugin from our **`user_prefs.proto`** file. 
-
-Rebuild the project to see those files inside the java (generated) folder. 
-
-We find a new **UserPrefs** folder that represents our proto file,  and a **UserPreferences** class that represents our message object. Inside it we have java code that implements some getters and setters for this UserPreferences message object.
-
-## ↪️ Serializer 
-
-To tell DataStore how to read and write the data type we defined in the proto file, we need to implement a Serializer. The Serializer defines also the default value to be returned if there's no data saved yet.
-
-Back in our project, we create a class called **UserPreferencesSerializer** which extends Serializer<UserPreferences>. We implement its two methods readFrom and writeTo. In these methods we define how we want to read and write this object into our DataStore.
-
-<script src="https://gist.github.com/yalematta/de4e14ae3e6c154cca432eecb31cd8e1.js"></script>
-
-## 🗃️ DataStore Repository 
-
-Next we create our Repository which we call **UserPreferencesRepository**.
-
-<script src="https://gist.github.com/yalematta/dc5d09a3f1fe116b673bc1b0e6c49db0.js"></script>
-
-### 📋 Read from DataStore 
-
-We create a new variable called userPreferencesFlow of type Flow<UserPreferences>. We use our dataStore to read the data and catch exceptions if there is any and emit the default instance of UserPreferences in that case.
-
-<script src="https://gist.github.com/yalematta/0a71f274d6ad057bdddc2c9087fc9434.js"></script>
-
-### 📝 Write to DataStore 
-
-We create the suspend updateUsername function which will update one field from our UserPreferences member values. We will call **`preference.toBuilder().`** and we choose the setter method that we need from our generated class.
-
-<script src="https://gist.github.com/yalematta/8df794025887336597365c5558a820d7.js"></script>
-
-P.S: Don't forget to create a method to update each field.
-
-### 🆑 Clear DataStore 
-
-To clear data, we can either clear the preferences all together or clear a specific preference by its method from our generated class.
-
-<script src="https://gist.github.com/yalematta/47c77317f29dee5b1a047bee985898c8.js"></script>
-
-## 🤙🏼 Call it from the ViewModel 
-
-In our **LoginViewModel**, we create a variable for our **UserPreferences**, read its data from our DataStore as a Flow and then convert it to LiveData.
-
-Next we create a new function named **saveUserPreferences** and we pass to it the values that we want to update. We call viewModel scope and run the following code inside a coroutine since our update functions in our Repository are using Kotlin Coroutines.
-
-<script src="https://gist.github.com/yalematta/0ca185c7acc4ef45b170cfa476946d5f.js"></script>
-
-**LoginViewModelFactory** is a ViewModelProvider.Factory that is responsible to create our instance of **LoginViewModel** later in our Activity. We will pass to it the **DataStoreRepository** which is need in **LoginViewModel**'s constructor.
-
-## 🔬 Observe it in the Activity 
-
-### 🗄️ Create DataStore 
-
-In our Activity, we first create our userPreferencesDataStore and we initialize it and pass to it a file name as well as our Serializer class. 
-
-<script src="https://gist.github.com/yalematta/55129c3f89abfc16731669495395347c.js"></script>
-
-### 📦 Migrate from SharedPreferences 
-
-If we are migrating our existing data from the SharedPreferences, when creating our DataStore, we should add a migration based on the SharedPreferences name. 
-
-And when creating the dataStore we need to update the DataStore builder and assign to the migrations parameter a new list that contains an instance of our SharedPreferencesMigration.
-
-Define the mapping logic from SharedPreferences to UserPreferences inside your SharedPreferencesMigration.
-
-DataStore will be able to migrate from SharedPreferences to DataStore automatically, for us. 
-
-<script src="https://gist.github.com/yalematta/6c975819f7a3e1535f24863c9b20d4a0.js"></script>
-
-Inside our onCreate function, we initialize our ViewModel and we observe our fields' values, so that whenever this data changes we will update it in its corresponding text field. 
-
-And whenever we click our login button, we store the value from our editText and checkBox field and update it in our DataStore using the saveUserPreferences function.
-
-<script src="https://gist.github.com/yalematta/3c9193d6c6e1108c641d8a728f883472.js"></script>
-
-## 💡 Key Takeaways 
-
-Now that we migrated to Preferences DataStore let's recap! 
-
-**DataStore**:
-- is a replacement for SharedPreferences
-- has a fully asynchronous API using Kotlin coroutines and Flow
-- guarantees data consistency
-- handles data migration
-- handles data corruption
-
-DataStore has 2 different implementations: Preferences DataStore and Proto DataStore.
-
-[**Preferences DataStore**](https://yalematta.dev/blog/preferences-datastore.html):
-- stores and accesses data using keys
-
-**Proto DataStore**:
-- ensures Type Safety
-- requires defining a schema using Protocol Buffers
-
--->
+<img src="../assets/img/per_app_language_03.jpg" width="300"/> <img src="../assets/img/per_app_language_04.jpg" width="300"/> <img src="../assets/img/per_app_language_05.jpg" width="300"/> 
 
 ## ⏭ Up next 
 
