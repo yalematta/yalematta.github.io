@@ -7,7 +7,15 @@ tags: [android, language, android13]
 image: per_app_language.jpg
 ---
 
-[Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on my whole Android device.
+[Android 13](https://www.android.com/android-13/) has introduced a new feature that let you assign a different language to individual applications, allowing you to navigate each app with a specific language without the need to change the Language settings on my whole Android device. 
+
+## What is the benefit of switching languages per app?
+
+Several users are bilingual, so they may require certain apps to be in different languages. For example, you might be able to communicate in both English and French, with French being your native language. On your device, you might have set your system’s default language to English. The majority of apps can use this well, while some, like financial ones, would be far better in French since it's more comfortable.
+
+In my case, I am trying to learn a new foreign language. Changing the app language has allowed me to access some apps for brief periods of time while keeping my system's default language set to English. This has helped me become more familiar with the language, encouraging me to use it in order to navigate the app.
+
+Whatever your case may be, using this feature will allow you to fine-tune your experience to ideally fit you, no matter what language or combination you choose.
 
 ## 📱 Try it on your device 
 
