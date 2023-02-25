@@ -16,6 +16,7 @@ menu:
 social:
 - {icon: 'github', link: 'https://github.com/yalematta/'}
 - {icon: 'twitter', link: 'https://twitter.com/yalematta'}
+- {icon: 'mastodon', link: 'https://androiddev.social/@yalematta'}
 - {icon: 'linkedin', link: 'https://www.linkedin.com/in/layalematta/'}
 - {icon: 'youtube', link: 'https://www.youtube.com/LayaleMatta'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
