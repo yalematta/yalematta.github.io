@@ -24,7 +24,7 @@ Implementing this feature in your app requires 3 simple steps:
 
 ### 1️⃣ Add your app's supported languages to the System Settings
 
-Create a file called `res/xml/locales_config.xml`. This [Sample file](https://developer.android.com/guide/topics/resources/app-languages#sample-config) will help you construct yours. Make sure to only have your localized languages specified there. Otherwise selecting a language that's not supported by your app will fall back to the default language, which is the locale specified in `res/values/strings.xml`
+Create a file called `res/xml/locales_config.xml`. This [sample file](https://developer.android.com/guide/topics/resources/app-languages#sample-config) will help you construct yours. Make sure to only have your localized languages specified there. Otherwise selecting a language that's not supported by your app will fall back to the default language, which is the locale specified in `res/values/strings.xml`
 
 <script src="https://gist.github.com/yalematta/557eefd13a5a7d8d93ba0ed7244ac7b3.js"></script>
 
