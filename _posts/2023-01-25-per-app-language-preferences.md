@@ -52,8 +52,6 @@ Use the `resourceConfiguration` property in your app's module-level `build.gradl
 
 To test how this feature looks on your app: navigate to your app's info, find the Language section, change the Language of your app and check if it shows the correct language.
 
-<img src="../assets/img/per_app_language_02.jpg" width="300"/> <img src="../assets/img/per_app_language_03.jpg" width="300"/> 
-
 ## ⏭ Up next 
 
 If this post was of any help to you, or if you'd like me to write about any specific Android related topics, let me know! Drop me a DM on Twitter [@yalematta](https://twitter.com/yalematta) ✌🏼
