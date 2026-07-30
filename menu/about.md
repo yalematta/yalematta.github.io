@@ -51,6 +51,7 @@ Projects I am currently working on
          alt="Cora BC" title="Cora BC" style="margin-right:24px;"></a>
 </p>
 --->
+
 Community & Public Speaking
 ---------------------------
 
