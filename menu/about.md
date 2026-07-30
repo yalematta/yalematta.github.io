@@ -46,7 +46,7 @@ Projects I am currently working on
          alt="Nelia" title="Click to enlarge"></a>
          
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.corabc">
-    <img src="" width="150" 
+    <img src="https://github.com/user-attachments/assets/e7bd425c-e304-4e74-a8b1-9bc763dd2d1d" width="150" 
          alt="Cora BC" title="Click to enlarge"></a>
 </p>
 
