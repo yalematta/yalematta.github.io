@@ -29,6 +29,27 @@ Projects I have worked on
          alt="Ostaz" title="Click to enlarge"></a>
 </p>
 
+Projects I am currently working on
+----------------------------------
+
+<p>
+<a href="https://play.google.com/store/apps/details?id=com.dawnhealth.neurohealth">
+    <img src="" width="150" 
+         alt="Ekiva MS" title="Click to enlarge"></a>
+    
+<a href="https://play.google.com/store/apps/details?id=com.dawnhealth.ekivapnh">
+    <img src="" width="150" 
+         alt="Ekiva PNH" title="Click to enlarge"></a>
+    
+<a href="https://play.google.com/store/apps/details?id=com.dawnhealth.nelia">
+    <img src="" width="150" 
+         alt="Nelia" title="Click to enlarge"></a>
+         
+<a href="https://play.google.com/store/apps/details?id=com.dawnhealth.corabc">
+    <img src="" width="150" 
+         alt="Cora BC" title="Click to enlarge"></a>
+</p>
+
 Community & Public Speaking
 ---------------------------
 
