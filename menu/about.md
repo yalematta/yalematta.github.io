@@ -34,7 +34,7 @@ Projects I am currently working on
 
 <p>
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.neurohealth">
-    <img src="https://github.com/user-attachments/assets/fc6d99ee-8048-46cc-8cb3-e5bc98059aa2" width="100" 
+    <img src="https://github.com/user-attachments/assets/3d3b38c6-66bd-40e1-9211-3d4a856a4585" width="100" 
          alt="Ekiva MS" title="Click to enlarge" style="box-shadow: 3px 3px 3px gray;"></a>
  
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.ekivapnh">
