@@ -35,19 +35,19 @@ Projects I am currently working on
 <p>
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.neurohealth">
     <img src="https://github.com/user-attachments/assets/3d3b38c6-66bd-40e1-9211-3d4a856a4585" width="100" 
-         alt="Ekiva MS" title="Click to enlarge" style="box-shadow: 3px 3px 3px gray;"></a>
+         alt="Ekiva MS" title="Click to enlarge" style="margin-right:24px;"></a>
  
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.ekivapnh">
-    <img src="https://github.com/user-attachments/assets/d57bdb97-b2df-41d6-b8d5-cce008e2633a" width="100" 
-         alt="Ekiva PNH" title="Click to enlarge" style="box-shadow: 3px 3px 3px gray;"></a>
+    <img src="https://github.com/user-attachments/assets/0feffaa3-b4cb-48bf-81c7-2c9880d89bad" width="100" 
+         alt="Ekiva PNH" title="Click to enlarge" style="margin-right:24px;"></a>
     
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.nelia">
-    <img src="https://github.com/user-attachments/assets/2053b7ed-c1aa-414c-95f6-ea16d2f48a7e" width="100" 
-         alt="Nelia" title="Click to enlarge" style="box-shadow: 3px 3px 3px gray;"></a>
+    <img src="https://github.com/user-attachments/assets/7637584d-75ea-4810-97ee-067171f2445c" width="100" 
+         alt="Nelia" title="Click to enlarge" style="margin-right:24px;"></a>
          
 <a href="https://play.google.com/store/apps/details?id=com.dawnhealth.corabc">
-    <img src="https://github.com/user-attachments/assets/e7bd425c-e304-4e74-a8b1-9bc763dd2d1d" width="100" 
-         alt="Cora BC" title="Click to enlarge" style="box-shadow: 3px 3px 3px gray;"></a>
+    <img src="https://github.com/user-attachments/assets/36470808-a781-4c88-938f-4cf4d52bdb49" width="100" 
+         alt="Cora BC" title="Click to enlarge" style="margin-right:24px;"></a>
 </p>
 
 Community & Public Speaking
