@@ -29,6 +29,7 @@ Projects I have worked on
          alt="Ostaz" title="Ostaz"></a>
 </p>
 
+<!---
 Projects I am currently working on
 ----------------------------------
 
@@ -49,7 +50,7 @@ Projects I am currently working on
     <img src="https://github.com/user-attachments/assets/36470808-a781-4c88-938f-4cf4d52bdb49" width="100" 
          alt="Cora BC" title="Cora BC" style="margin-right:24px;"></a>
 </p>
-
+--->
 Community & Public Speaking
 ---------------------------
 
